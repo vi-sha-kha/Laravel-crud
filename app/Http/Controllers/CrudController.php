@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Crud;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CrudController extends Controller
 {
@@ -18,9 +19,13 @@ class CrudController extends Controller
     //  }
     public function index()
     {
-        $crud = Crud::latest()->paginate(5);
-         return view('crud.index', compact('crud'))->with('i',(request()->input('page',1)-1)*5);
-        //return view('crud.index');
+        // $crud = Crud::latest()->paginate(5);
+        //  return view('crud.index', compact('crud'))->with('i',(request()->input('page',1)-1)*5);
+        //    $crud = Crud::all();
+
+           $crud = DB::table('crud')->get();
+
+        return view('crud.index',compact('crud'));
     }
 
     /**
@@ -35,6 +40,8 @@ class CrudController extends Controller
         //$incomingFields['subject'] = script_tags($incomingFields['subject']);
 
         //Crud::create($incomingFields);
+
+
 
         return view('crud.create');
     }
