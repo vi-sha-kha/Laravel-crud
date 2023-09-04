@@ -26,17 +26,17 @@
 
         @foreach ($crud as $crud)
         <tr>
-            <td>{{++$i}}</td>
+            <td>{{$loop->iteration}}</td>
             <td>{{$crud->subject}}</td>
             <td>
-                <form action="route{{'crud.index'}}" method="POST">
+                <form action="{{route('crud.destroy', $crud->id)}}" method="POST">
                     {{-- <a class="btn btn-info" href="{{route('crud.show',$crud->id)}}">Show</a> --}}
                     <a class="btn btn-primary" href="{{route("crud.edit",$crud->id)}}">Edit</a>
 
                     @csrf
                     @method('DELETE')
 
-                   <button type="submit" class="btn btn-danger">Delete</button>
+                   <button type="submit"  class="btn btn-danger">Delete</button>
 
                 </form>
 
