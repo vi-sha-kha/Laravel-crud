@@ -27,7 +27,7 @@ class ApiPostController extends Controller
 
     }
 
-    public function show(ApiPost $apiPApiPost)
+    public function show(ApiPost $apiPost)
     {
         //
     }
@@ -35,7 +35,7 @@ class ApiPostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ApiPost $apiPApiPost)
+    public function edit(ApiPost $apiPost)
     {
         //
     }
@@ -50,3 +50,6 @@ class ApiPostController extends Controller
          return response(null, 204);
     }
 }
+
+
+

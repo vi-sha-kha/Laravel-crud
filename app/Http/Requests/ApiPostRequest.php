@@ -23,7 +23,7 @@ class ApiPostRequest extends FormRequest
     {
        return [
 
-        'sth' => 'required',
+        'sth' =>  ['required']
     ];
     }
 }
