@@ -8,7 +8,7 @@
             <h2>Add New Product</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('crud.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('crud.create') }}"> Back</a>
         </div>
     </div>
 
@@ -29,7 +29,7 @@
             <td>{{++$i}}</td>
             <td>{{$crud->subject}}</td>
             <td>
-                <form action="{{'crud.create'}}" method="POST">
+                <form action="route{{'crud.index'}}" method="POST">
                     {{-- <a class="btn btn-info" href="{{route('crud.show',$crud->id)}}">Show</a> --}}
                     <a class="btn btn-primary" href="{{route("crud.edit",$crud->id)}}">Edit</a>
 

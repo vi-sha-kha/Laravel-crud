@@ -56,15 +56,14 @@ Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name
 Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
   Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
- // Route::get('/crud', [CrudController::class, 'index'])->name('crud.index');
+ Route::get('/crud', [CrudController::class, 'index'])->name('crud.index');
 
-//   Route::get('/crud/create', [CrudController::class, 'create'])->name('crud.create');
-// Route::get('/crud/{crud}', [CrudController::class, 'show'])->name('crud.show');
-
-// Route::post('/crud', [CrudController::class, 'store'])->name('crud.store');
-// Route::get('/crud/{crud}/edit', [CrudController::class, 'edit'])->name('crud.edit');
-//  Route::patch('/crud/{crud}', [CrudController::class, 'update'])->name('crud.update');
-// Route::delete('/crud/{crud}', [CrudController::class, 'destroy'])->name('crud.destroy');
+  Route::get('/crud/create', [CrudController::class, 'create'])->name('crud.create');
+Route::post('/crud', [CrudController::class, 'store'])->name('crud.store');
+  Route::get('/crud/{crud}', [CrudController::class, 'show'])->name('crud.show');
+Route::get('/crud/{crud}/edit', [CrudController::class, 'edit'])->name('crud.edit');
+ Route::put('/crud/{crud}', [CrudController::class, 'update'])->name('crud.update');
+Route::delete('/crud/{crud}', [CrudController::class, 'destroy'])->name('crud.destroy');
 
 //  Route::post('/edit',[ CrudController::class, 'store'])->name('crud.edit');
 

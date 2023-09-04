@@ -110,6 +110,6 @@ class CrudController extends Controller
     public function destroy(Crud $crud)
     {
         $crud->delete();
-        return back() -> withDanger ('Deleted Successfully!');
+        return redirect()->route('crud.index')->withSuccess('Deleted Successfully!');
     }
 }
